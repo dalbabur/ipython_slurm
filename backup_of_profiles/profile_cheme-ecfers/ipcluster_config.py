@@ -24,12 +24,12 @@ c.SlurmControllerLauncher.batch_template = """#!/bin/bash
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=4G
 #SBATCH --time=2:00:00
-#SBATCH -o ~/ipython_slurm/ecfers/slurm_controller.out
+#SBATCH -o /mmfs1/home/dalba/ipython_slurm/ecfers/slurm_controller.out
 
 sh ~/ipython_slurm/ecfers/launch_ecfers.sh
 apptainer exec instance://container ~/ipython_slurm/ecfers/launch_controller.sh
 """
-c.SlurmControllerLauncher.batch_file_name = '~/ipython_slurm/ecfers/slurm_controller.sbatch'
+c.SlurmControllerLauncher.batch_file_name = '/mmfs1/home/dalba/ipython_slurm/ecfers/slurm_controller.sbatch'
 
 
 c.Cluster.engine_launcher_class = 'slurm'
@@ -43,11 +43,11 @@ c.SlurmEngineSetLauncher.batch_template = """#!/bin/bash
 #SBATCH --ntasks-per-node=40
 #SBATCH --mem=4G
 #SBATCH --time=2:00:00
-#SBATCH -o ~/ipython_slurm/ecfers/slurm_engine.out
+#SBATCH -o /mmfs1/home/dalba/ipython_slurm/ecfers/slurm_engine.out
 
 srun apptainer run /gscratch/cheme/dalba/ecfers_latest.sif ~/ipython_slurm/ecfers/launch_engine.sh
 """
-c.SlurmEngineSetLauncher.batch_file_name = '~/ipython_slurm/ecfers/slurm_engine.sbatch'
+c.SlurmEngineSetLauncher.batch_file_name = '/mmfs1/home/dalba/ipython_slurm/ecfers/slurm_engine.sbatch'
 
 #------------------------------------------------------------------------------
 # Application(SingletonConfigurable) configuration

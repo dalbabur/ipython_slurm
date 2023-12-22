@@ -24,12 +24,12 @@ c.SlurmControllerLauncher.batch_template = """#!/bin/bash
 #SBATCH --ntasks-per-node=40
 #SBATCH --mem=4G
 #SBATCH --time=2:00:00
-#SBATCH -o ~/ipython_slurm/deeprpo/slurm_controller.out
+#SBATCH -o /mmfs1/home/dalba/ipython_slurm/deeprpo/slurm_controller.out
 
 sh ~/ipython_slurm/deeprpo/launch_deeprpo.sh
 apptainer exec instance://container ~/ipython_slurm/deeprpo/launch_controller.sh
 """
-c.SlurmControllerLauncher.batch_file_name = '~/ipython_slurm/deeprpo/slurm_controller.sbatch'
+c.SlurmControllerLauncher.batch_file_name = '/mmfs1/home/dalba/ipython_slurm/deeprpo/slurm_controller.batch'
 
 
 c.Cluster.engine_launcher_class = 'slurm'
@@ -43,11 +43,11 @@ c.SlurmEngineSetLauncher.batch_template = """#!/bin/bash
 #SBATCH --ntasks-per-node=40
 #SBATCH --mem=4G
 #SBATCH --time=2:00:00
-#SBATCH -o ~/ipython_slurm/deeprpo/slurm_engine.out
+#SBATCH -o /mmfs1/home/dalba/ipython_slurm/deeprpo/slurm_engine.out
 
 srun apptainer run /gscratch/cheme/dalba/deeprpo_latest.sif ~/ipython_slurm/deeprpo/launch_engine.sh
 """
-c.SlurmEngineSetLauncher.batch_file_name = '~/ipython_slurm/deeprpo/slurm_engine.sbatch'
+c.SlurmEngineSetLauncher.batch_file_name = '/mmfs1/home/dalba/ipython_slurm/deeprpo/slurm_engine.sbatch'
 
 #------------------------------------------------------------------------------
 # Application(SingletonConfigurable) configuration

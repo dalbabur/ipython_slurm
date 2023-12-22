@@ -1,2 +1,2 @@
 #!/bin/bash
-sh ipcluster start --profile=cheme-ecfers --n=5
+ipcluster start --profile=cheme-ecfers --n=5
