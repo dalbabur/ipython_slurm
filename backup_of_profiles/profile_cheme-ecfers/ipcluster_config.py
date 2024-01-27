@@ -22,8 +22,8 @@ c.SlurmControllerLauncher.batch_template = """#!/bin/bash
 
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --mem=4G
-#SBATCH --time=2:00:00
+#SBATCH --mem=10G
+#SBATCH --time=24:00:00
 #SBATCH -o /mmfs1/home/dalba/ipython_slurm/ecfers/slurm_controller.out
 
 sh ~/ipython_slurm/ecfers/launch_ecfers.sh
@@ -41,11 +41,11 @@ c.SlurmEngineSetLauncher.batch_template = """#!/bin/bash
 
 #SBATCH --nodes={n}
 #SBATCH --ntasks-per-node=40
-#SBATCH --mem=4G
-#SBATCH --time=2:00:00
+#SBATCH --mem=100G
+#SBATCH --time=24:00:00
 #SBATCH -o /mmfs1/home/dalba/ipython_slurm/ecfers/slurm_engine.out
 
-srun apptainer run /gscratch/cheme/dalba/ecfers_latest.sif ~/ipython_slurm/ecfers/launch_engine.sh
+srun apptainer run --bind /gscratch/cheme/dalba/repos/ECFERS /gscratch/cheme/dalba/ecfers_latest.sif ~/ipython_slurm/ecfers/launch_engine.sh
 """
 c.SlurmEngineSetLauncher.batch_file_name = '/mmfs1/home/dalba/ipython_slurm/ecfers/slurm_engine.sbatch'
 

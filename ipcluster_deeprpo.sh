@@ -1,2 +1,2 @@
 #!/bin/bash
-ipcluster start --profile=cheme-deeprpo --n=5
+ipcluster start --profile=cheme-deeprpo --n=2

@@ -6,8 +6,8 @@
 
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --mem=4G
-#SBATCH --time=2:00:00
+#SBATCH --mem=10G
+#SBATCH --time=24:00:00
 #SBATCH -o /mmfs1/home/dalba/ipython_slurm/ecfers/slurm_controller.out
 
 sh ~/ipython_slurm/ecfers/launch_ecfers.sh
