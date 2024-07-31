@@ -7,7 +7,7 @@
 #SBATCH --nodes=15
 #SBATCH --ntasks-per-node=40
 #SBATCH --mem=100G
-#SBATCH --time=24:00:00
+#SBATCH --time=48:00:00
 #SBATCH -o /mmfs1/gscratch/stf/dalba/ipython_ecfers_logs/slurm_engine.out
 #SBATCH --cpus-per-task=1
 

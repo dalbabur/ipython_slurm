@@ -1,9 +1,12 @@
 # Configuration file for ipcontroller.
 
 c = get_config()  #noqa
+c.HeartMonitor.period = 15000
 c.IPController.registration_timeout = 300
 c.IPController.ip = '0.0.0.0'
-
+# c.TaskScheduler.scheme_name = 'pure'
+c.IPController.broadcast_scheduler_depth = 4
+c.IPEngine.enable_nanny = True
 # or to get an automatic value, try this:
 import socket
 hostname = socket.gethostname()

@@ -2,7 +2,7 @@
 
 c = get_config()  #noqa
 
-c.IPEngine.wait_for_url_file = 30
+c.IPEngine.wait_for_url_file = 90
 c.IPEngine.timeout = 300
 # or to get an automatic value, try this:
 import socket
